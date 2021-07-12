@@ -1006,6 +1006,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFragmentShaderShadingRateInterlockEXT = 5372,
     SpvCapabilityShaderSMBuiltinsNV = 5373,
     SpvCapabilityFragmentShaderPixelInterlockEXT = 5378,
+    SpvCapabilityDemoteToHelperInvocation = 5379,
     SpvCapabilityDemoteToHelperInvocationEXT = 5379,
     SpvCapabilitySubgroupShuffleINTEL = 5568,
     SpvCapabilitySubgroupBufferBlockIOINTEL = 5569,
@@ -1539,6 +1540,7 @@ typedef enum SpvOp_ {
     SpvOpCooperativeMatrixLengthNV = 5362,
     SpvOpBeginInvocationInterlockEXT = 5364,
     SpvOpEndInvocationInterlockEXT = 5365,
+    SpvOpDemoteToHelperInvocation = 5380,
     SpvOpDemoteToHelperInvocationEXT = 5380,
     SpvOpIsHelperInvocationEXT = 5381,
     SpvOpSubgroupShuffleINTEL = 5571,
@@ -2177,7 +2179,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
-    case SpvOpDemoteToHelperInvocationEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpDemoteToHelperInvocation: *hasResult = false; *hasResultType = false; break;
     case SpvOpIsHelperInvocationEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupShuffleINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupShuffleDownINTEL: *hasResult = true; *hasResultType = true; break;

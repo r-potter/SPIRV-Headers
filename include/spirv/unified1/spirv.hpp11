@@ -1002,6 +1002,7 @@ enum class Capability : unsigned {
     FragmentShaderShadingRateInterlockEXT = 5372,
     ShaderSMBuiltinsNV = 5373,
     FragmentShaderPixelInterlockEXT = 5378,
+    DemoteToHelperInvocation = 5379,
     DemoteToHelperInvocationEXT = 5379,
     SubgroupShuffleINTEL = 5568,
     SubgroupBufferBlockIOINTEL = 5569,
@@ -1535,6 +1536,7 @@ enum class Op : unsigned {
     OpCooperativeMatrixLengthNV = 5362,
     OpBeginInvocationInterlockEXT = 5364,
     OpEndInvocationInterlockEXT = 5365,
+    OpDemoteToHelperInvocation = 5380,
     OpDemoteToHelperInvocationEXT = 5380,
     OpIsHelperInvocationEXT = 5381,
     OpSubgroupShuffleINTEL = 5571,
@@ -2173,7 +2175,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
-    case Op::OpDemoteToHelperInvocationEXT: *hasResult = false; *hasResultType = false; break;
+    case Op::OpDemoteToHelperInvocation: *hasResult = false; *hasResultType = false; break;
     case Op::OpIsHelperInvocationEXT: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupShuffleINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupShuffleDownINTEL: *hasResult = true; *hasResultType = true; break;

@@ -4109,7 +4109,7 @@
         "SPV_KHR_terminate_invocation"
       ],
       "capabilities" : [ "Shader" ],
-      "version" : "None"
+      "version" : "1.6"
     },
     {
       "opname" : "OpSubgroupBallotKHR",
@@ -4792,12 +4792,18 @@
       "version" : "None"
     },
     {
-      "opname" : "OpDemoteToHelperInvocationEXT",
-      "class"  : "Reserved",
+      "opname" : "OpDemoteToHelperInvocation",
+      "class"  : "Control-Flow",
       "opcode" : 5380,
-      "capabilities" : [ "DemoteToHelperInvocationEXT" ],
-      "extensions" : [ "SPV_EXT_demote_to_helper_invocation" ],
-      "version" : "None"
+      "capabilities" : [ "DemoteToHelperInvocation" ],
+      "version" : "1.6"
+    },
+    {
+      "opname" : "OpDemoteToHelperInvocationEXT",
+      "class"  : "Control-Flow",
+      "opcode" : 5380,
+      "capabilities" : [ "DemoteToHelperInvocation" ],
+      "version" : "1.6"
     },
     {
       "opname" : "OpIsHelperInvocationEXT",
@@ -13052,11 +13058,17 @@
           "version" : "None"
         },
         {
+          "enumerant" : "DemoteToHelperInvocation",
+          "value" : 5379,
+          "capabilities" : [ "Shader" ],
+          "version" : "1.6"
+        },
+        {
           "enumerant" : "DemoteToHelperInvocationEXT",
           "value" : 5379,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_demote_to_helper_invocation" ],
-          "version" : "None"
+          "version" : "1.6"
         },
         {
           "enumerant" : "SubgroupShuffleINTEL",
