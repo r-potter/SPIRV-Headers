@@ -8366,6 +8366,11 @@
           "enumerant" : "ZeroExtend",
           "value" : "0x2000",
           "version" : "1.4"
+        },
+        {
+          "enumerant" : "NonTemporal",
+          "value" : "0x4000",
+          "version" : "1.6"
         }
       ]
     },

@@ -332,6 +332,7 @@ spv = {
         VolatileTexelKHR = 11,
         SignExtend = 12,
         ZeroExtend = 13,
+        NonTemporal = 14,
     },
 
     ImageOperandsMask = {
@@ -354,6 +355,7 @@ spv = {
         VolatileTexelKHR = 0x00000800,
         SignExtend = 0x00001000,
         ZeroExtend = 0x00002000,
+        NonTemporal = 0x00004000,
     },
 
     FPFastMathModeShift = {
