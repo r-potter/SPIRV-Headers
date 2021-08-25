@@ -1735,7 +1735,8 @@
         { "kind" : "IdRef",        "name" : "'x'" },
         { "kind" : "IdRef",        "name" : "'y'" }
       ],
-      "capabilities" : [ "Kernel" ]
+      "capabilities" : [ "Kernel" ],
+      "lastVersion" : "1.5"
     },
     {
       "opname" : "OpOrdered",
