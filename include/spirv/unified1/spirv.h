@@ -1048,9 +1048,13 @@ typedef enum SpvCapability_ {
     SpvCapabilityIOPipesINTEL = 5943,
     SpvCapabilityBlockingPipesINTEL = 5945,
     SpvCapabilityFPGARegINTEL = 5948,
+    SpvCapabilityDotProductInputAll = 6016,
     SpvCapabilityDotProductInputAllKHR = 6016,
+    SpvCapabilityDotProductInput4x8Bit = 6017,
     SpvCapabilityDotProductInput4x8BitKHR = 6017,
+    SpvCapabilityDotProductInput4x8BitPacked = 6018,
     SpvCapabilityDotProductInput4x8BitPackedKHR = 6018,
+    SpvCapabilityDotProduct = 6019,
     SpvCapabilityDotProductKHR = 6019,
     SpvCapabilityBitInstructions = 6025,
     SpvCapabilityAtomicFloat32AddEXT = 6033,
@@ -1157,6 +1161,7 @@ typedef enum SpvOverflowModes_ {
 } SpvOverflowModes;
 
 typedef enum SpvPackedVectorFormat_ {
+    SpvPackedVectorFormatPackedVectorFormat4x8Bit = 0,
     SpvPackedVectorFormatPackedVectorFormat4x8BitKHR = 0,
     SpvPackedVectorFormatMax = 0x7fffffff,
 } SpvPackedVectorFormat;
@@ -1518,11 +1523,17 @@ typedef enum SpvOp_ {
     SpvOpConvertUToAccelerationStructureKHR = 4447,
     SpvOpIgnoreIntersectionKHR = 4448,
     SpvOpTerminateRayKHR = 4449,
+    SpvOpSDot = 4450,
     SpvOpSDotKHR = 4450,
+    SpvOpUDot = 4451,
     SpvOpUDotKHR = 4451,
+    SpvOpSUDot = 4452,
     SpvOpSUDotKHR = 4452,
+    SpvOpSDotAccSat = 4453,
     SpvOpSDotAccSatKHR = 4453,
+    SpvOpUDotAccSat = 4454,
     SpvOpUDotAccSatKHR = 4454,
+    SpvOpSUDotAccSat = 4455,
     SpvOpSUDotAccSatKHR = 4455,
     SpvOpTypeRayQueryKHR = 4472,
     SpvOpRayQueryInitializeKHR = 4473,
@@ -2165,12 +2176,12 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpIgnoreIntersectionKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpTerminateRayKHR: *hasResult = false; *hasResultType = false; break;
-    case SpvOpSDotKHR: *hasResult = true; *hasResultType = true; break;
-    case SpvOpUDotKHR: *hasResult = true; *hasResultType = true; break;
-    case SpvOpSUDotKHR: *hasResult = true; *hasResultType = true; break;
-    case SpvOpSDotAccSatKHR: *hasResult = true; *hasResultType = true; break;
-    case SpvOpUDotAccSatKHR: *hasResult = true; *hasResultType = true; break;
-    case SpvOpSUDotAccSatKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpSDot: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUDot: *hasResult = true; *hasResultType = true; break;
+    case SpvOpSUDot: *hasResult = true; *hasResultType = true; break;
+    case SpvOpSDotAccSat: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUDotAccSat: *hasResult = true; *hasResultType = true; break;
+    case SpvOpSUDotAccSat: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeRayQueryKHR: *hasResult = true; *hasResultType = false; break;
     case SpvOpRayQueryInitializeKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpRayQueryTerminateKHR: *hasResult = false; *hasResultType = false; break;

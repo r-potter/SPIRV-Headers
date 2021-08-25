@@ -1051,9 +1051,13 @@ enum Capability : uint
     IOPipesINTEL = 5943,
     BlockingPipesINTEL = 5945,
     FPGARegINTEL = 5948,
+    DotProductInputAll = 6016,
     DotProductInputAllKHR = 6016,
+    DotProductInput4x8Bit = 6017,
     DotProductInput4x8BitKHR = 6017,
+    DotProductInput4x8BitPacked = 6018,
     DotProductInput4x8BitPackedKHR = 6018,
+    DotProduct = 6019,
     DotProductKHR = 6019,
     BitInstructions = 6025,
     AtomicFloat32AddEXT = 6033,
@@ -1162,6 +1166,7 @@ enum OverflowModes : uint
 
 enum PackedVectorFormat : uint
 {
+    PackedVectorFormat4x8Bit = 0,
     PackedVectorFormat4x8BitKHR = 0,
 }
 
@@ -1523,11 +1528,17 @@ enum Op : uint
     OpConvertUToAccelerationStructureKHR = 4447,
     OpIgnoreIntersectionKHR = 4448,
     OpTerminateRayKHR = 4449,
+    OpSDot = 4450,
     OpSDotKHR = 4450,
+    OpUDot = 4451,
     OpUDotKHR = 4451,
+    OpSUDot = 4452,
     OpSUDotKHR = 4452,
+    OpSDotAccSat = 4453,
     OpSDotAccSatKHR = 4453,
+    OpUDotAccSat = 4454,
     OpUDotAccSatKHR = 4454,
+    OpSUDotAccSat = 4455,
     OpSUDotAccSatKHR = 4455,
     OpTypeRayQueryKHR = 4472,
     OpRayQueryInitializeKHR = 4473,

@@ -4261,6 +4261,20 @@
       "version" : "None"
     },
     {
+      "opname" : "OpSDot",
+      "class"  : "Arithmetic",
+      "opcode" : 4450,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProduct" ],
+      "version" : "1.6"
+    },
+    {
       "opname" : "OpSDotKHR",
       "class"  : "Arithmetic",
       "opcode" : 4450,
@@ -4272,7 +4286,22 @@
         { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
       ],
       "capabilities" : [ "DotProductKHR" ],
-      "version" : "None"
+      "extensions" : [ "SPV_KHR_integer_dot_product" ],
+      "version" : "1.6"
+    },
+    {
+      "opname" : "OpUDot",
+      "class"  : "Arithmetic",
+      "opcode" : 4451,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProduct" ],
+      "version" : "1.6"
     },
     {
       "opname" : "OpUDotKHR",
@@ -4286,7 +4315,22 @@
         { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
       ],
       "capabilities" : [ "DotProductKHR" ],
-      "version" : "None"
+      "extensions" : [ "SPV_KHR_integer_dot_product" ],
+      "version" : "1.6"
+    },
+    {
+      "opname" : "OpSUDot",
+      "class"  : "Arithmetic",
+      "opcode" : 4452,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProduct" ],
+      "version" : "1.6"
     },
     {
       "opname" : "OpSUDotKHR",
@@ -4300,7 +4344,23 @@
         { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
       ],
       "capabilities" : [ "DotProductKHR" ],
-      "version" : "None"
+      "extensions" : [ "SPV_KHR_integer_dot_product" ],
+      "version" : "1.6"
+    },
+    {
+      "opname" : "OpSDotAccSat",
+      "class"  : "Arithmetic",
+      "opcode" : 4453,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "IdRef", "name" : "'Accumulator'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProduct" ],
+      "version" : "1.6"
     },
     {
       "opname" : "OpSDotAccSatKHR",
@@ -4315,7 +4375,23 @@
         { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
       ],
       "capabilities" : [ "DotProductKHR" ],
-      "version" : "None"
+      "extensions" : [ "SPV_KHR_integer_dot_product" ],
+      "version" : "1.6"
+    },
+    {
+      "opname" : "OpUDotAccSat",
+      "class"  : "Arithmetic",
+      "opcode" : 4454,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "IdRef", "name" : "'Accumulator'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProduct" ],
+      "version" : "1.6"
     },
     {
       "opname" : "OpUDotAccSatKHR",
@@ -4330,7 +4406,23 @@
         { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
       ],
       "capabilities" : [ "DotProductKHR" ],
-      "version" : "None"
+      "extensions" : [ "SPV_KHR_integer_dot_product" ],
+      "version" : "1.6"
+    },
+    {
+      "opname" : "OpSUDotAccSat",
+      "class"  : "Arithmetic",
+      "opcode" : 4455,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "IdRef", "name" : "'Accumulator'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProduct" ],
+      "version" : "1.6"
     },
     {
       "opname" : "OpSUDotAccSatKHR",
@@ -4345,7 +4437,8 @@
         { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
       ],
       "capabilities" : [ "DotProductKHR" ],
-      "version" : "None"
+      "extensions" : [ "SPV_KHR_integer_dot_product" ],
+      "version" : "1.6"
     },
     {
         "opname" : "OpTypeRayQueryKHR",
@@ -13423,26 +13516,47 @@
           "enumerant" : "DotProductInputAllKHR",
           "value" : 6016,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
-          "version" : "None"
+          "version" : "1.6"
+        },
+        {
+          "enumerant" : "DotProductInputAll",
+          "value" : 6016,
+          "version" : "1.6"
         },
         {
           "enumerant" : "DotProductInput4x8BitKHR",
           "value" : 6017,
           "capabilities" : [ "Int8" ],
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
-          "version" : "None"
+          "version" : "1.6"
+        },
+        {
+          "enumerant" : "DotProductInput4x8Bit",
+          "value" : 6017,
+          "capabilities" : [ "Int8" ],
+          "version" : "1.6"
         },
         {
           "enumerant" : "DotProductInput4x8BitPackedKHR",
           "value" : 6018,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
-          "version" : "None"
+          "version" : "1.6"
+        },
+        {
+          "enumerant" : "DotProductInput4x8BitPacked",
+          "value" : 6018,
+          "version" : "1.6"
         },
         {
           "enumerant" : "DotProductKHR",
           "value" : 6019,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
-          "version" : "None"
+          "version" : "1.6"
+        },
+        {
+          "enumerant" : "DotProduct",
+          "value" : 6019,
+          "version" : "1.6"
         },
         {
           "enumerant" : "BitInstructions",
@@ -13553,7 +13667,12 @@
           "enumerant" : "PackedVectorFormat4x8BitKHR",
           "value" : 0,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
-          "version" : "None"
+          "version" : "1.6"
+        },
+        {
+          "enumerant" : "PackedVectorFormat4x8Bit",
+          "value" : 0,
+          "version" : "1.6"
         }
       ]
     },

@@ -1044,9 +1044,13 @@ enum Capability {
     CapabilityIOPipesINTEL = 5943,
     CapabilityBlockingPipesINTEL = 5945,
     CapabilityFPGARegINTEL = 5948,
+    CapabilityDotProductInputAll = 6016,
     CapabilityDotProductInputAllKHR = 6016,
+    CapabilityDotProductInput4x8Bit = 6017,
     CapabilityDotProductInput4x8BitKHR = 6017,
+    CapabilityDotProductInput4x8BitPacked = 6018,
     CapabilityDotProductInput4x8BitPackedKHR = 6018,
+    CapabilityDotProduct = 6019,
     CapabilityDotProductKHR = 6019,
     CapabilityBitInstructions = 6025,
     CapabilityAtomicFloat32AddEXT = 6033,
@@ -1153,6 +1157,7 @@ enum OverflowModes {
 };
 
 enum PackedVectorFormat {
+    PackedVectorFormatPackedVectorFormat4x8Bit = 0,
     PackedVectorFormatPackedVectorFormat4x8BitKHR = 0,
     PackedVectorFormatMax = 0x7fffffff,
 };
@@ -1514,11 +1519,17 @@ enum Op {
     OpConvertUToAccelerationStructureKHR = 4447,
     OpIgnoreIntersectionKHR = 4448,
     OpTerminateRayKHR = 4449,
+    OpSDot = 4450,
     OpSDotKHR = 4450,
+    OpUDot = 4451,
     OpUDotKHR = 4451,
+    OpSUDot = 4452,
     OpSUDotKHR = 4452,
+    OpSDotAccSat = 4453,
     OpSDotAccSatKHR = 4453,
+    OpUDotAccSat = 4454,
     OpUDotAccSatKHR = 4454,
+    OpSUDotAccSat = 4455,
     OpSUDotAccSatKHR = 4455,
     OpTypeRayQueryKHR = 4472,
     OpRayQueryInitializeKHR = 4473,
@@ -2161,12 +2172,12 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
     case OpIgnoreIntersectionKHR: *hasResult = false; *hasResultType = false; break;
     case OpTerminateRayKHR: *hasResult = false; *hasResultType = false; break;
-    case OpSDotKHR: *hasResult = true; *hasResultType = true; break;
-    case OpUDotKHR: *hasResult = true; *hasResultType = true; break;
-    case OpSUDotKHR: *hasResult = true; *hasResultType = true; break;
-    case OpSDotAccSatKHR: *hasResult = true; *hasResultType = true; break;
-    case OpUDotAccSatKHR: *hasResult = true; *hasResultType = true; break;
-    case OpSUDotAccSatKHR: *hasResult = true; *hasResultType = true; break;
+    case OpSDot: *hasResult = true; *hasResultType = true; break;
+    case OpUDot: *hasResult = true; *hasResultType = true; break;
+    case OpSUDot: *hasResult = true; *hasResultType = true; break;
+    case OpSDotAccSat: *hasResult = true; *hasResultType = true; break;
+    case OpUDotAccSat: *hasResult = true; *hasResultType = true; break;
+    case OpSUDotAccSat: *hasResult = true; *hasResultType = true; break;
     case OpTypeRayQueryKHR: *hasResult = true; *hasResultType = false; break;
     case OpRayQueryInitializeKHR: *hasResult = false; *hasResultType = false; break;
     case OpRayQueryTerminateKHR: *hasResult = false; *hasResultType = false; break;
