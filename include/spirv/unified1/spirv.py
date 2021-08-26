@@ -627,6 +627,7 @@ spv = {
         'HitTNV' : 5332,
         'HitKindKHR' : 5333,
         'HitKindNV' : 5333,
+        'CurrentRayTimeNV' : 5334,
         'IncomingRayFlagsKHR' : 5351,
         'IncomingRayFlagsNV' : 5351,
         'RayGeometryIndexKHR' : 5352,
@@ -693,6 +694,7 @@ spv = {
         'DontInline' : 1,
         'Pure' : 2,
         'Const' : 3,
+        'OptNoneINTEL' : 16,
     },
 
     'FunctionControlMask' : {
@@ -701,6 +703,7 @@ spv = {
         'DontInline' : 0x00000002,
         'Pure' : 0x00000004,
         'Const' : 0x00000008,
+        'OptNoneINTEL' : 0x00010000,
     },
 
     'MemorySemanticsShift' : {
@@ -953,6 +956,7 @@ spv = {
         'StorageTexelBufferArrayNonUniformIndexing' : 5312,
         'StorageTexelBufferArrayNonUniformIndexingEXT' : 5312,
         'RayTracingNV' : 5340,
+        'RayTracingMotionBlurNV' : 5341,
         'VulkanMemoryModel' : 5345,
         'VulkanMemoryModelKHR' : 5345,
         'VulkanMemoryModelDeviceScope' : 5346,
@@ -1018,6 +1022,7 @@ spv = {
         'AtomicFloat32AddEXT' : 6033,
         'AtomicFloat64AddEXT' : 6034,
         'LongConstantCompositeINTEL' : 6089,
+        'OptNoneINTEL' : 6094,
         'AtomicFloat16AddEXT' : 6095,
         'DebugInfoModuleINTEL' : 6114,
     },
@@ -1508,6 +1513,8 @@ spv = {
         'OpIgnoreIntersectionNV' : 5335,
         'OpTerminateRayNV' : 5336,
         'OpTraceNV' : 5337,
+        'OpTraceMotionNV' : 5338,
+        'OpTraceRayMotionNV' : 5339,
         'OpTypeAccelerationStructureKHR' : 5341,
         'OpTypeAccelerationStructureNV' : 5341,
         'OpExecuteCallableNV' : 5344,

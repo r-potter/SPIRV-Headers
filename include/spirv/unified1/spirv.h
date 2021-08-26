@@ -659,6 +659,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInHitTNV = 5332,
     SpvBuiltInHitKindKHR = 5333,
     SpvBuiltInHitKindNV = 5333,
+    SpvBuiltInCurrentRayTimeNV = 5334,
     SpvBuiltInIncomingRayFlagsKHR = 5351,
     SpvBuiltInIncomingRayFlagsNV = 5351,
     SpvBuiltInRayGeometryIndexKHR = 5352,
@@ -728,6 +729,7 @@ typedef enum SpvFunctionControlShift_ {
     SpvFunctionControlDontInlineShift = 1,
     SpvFunctionControlPureShift = 2,
     SpvFunctionControlConstShift = 3,
+    SpvFunctionControlOptNoneINTELShift = 16,
     SpvFunctionControlMax = 0x7fffffff,
 } SpvFunctionControlShift;
 
@@ -737,6 +739,7 @@ typedef enum SpvFunctionControlMask_ {
     SpvFunctionControlDontInlineMask = 0x00000002,
     SpvFunctionControlPureMask = 0x00000004,
     SpvFunctionControlConstMask = 0x00000008,
+    SpvFunctionControlOptNoneINTELMask = 0x00010000,
 } SpvFunctionControlMask;
 
 typedef enum SpvMemorySemanticsShift_ {
@@ -995,6 +998,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityStorageTexelBufferArrayNonUniformIndexing = 5312,
     SpvCapabilityStorageTexelBufferArrayNonUniformIndexingEXT = 5312,
     SpvCapabilityRayTracingNV = 5340,
+    SpvCapabilityRayTracingMotionBlurNV = 5341,
     SpvCapabilityVulkanMemoryModel = 5345,
     SpvCapabilityVulkanMemoryModelKHR = 5345,
     SpvCapabilityVulkanMemoryModelDeviceScope = 5346,
@@ -1060,6 +1064,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityLongConstantCompositeINTEL = 6089,
+    SpvCapabilityOptNoneINTEL = 6094,
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilityMax = 0x7fffffff,
@@ -1561,6 +1566,8 @@ typedef enum SpvOp_ {
     SpvOpIgnoreIntersectionNV = 5335,
     SpvOpTerminateRayNV = 5336,
     SpvOpTraceNV = 5337,
+    SpvOpTraceMotionNV = 5338,
+    SpvOpTraceRayMotionNV = 5339,
     SpvOpTypeAccelerationStructureKHR = 5341,
     SpvOpTypeAccelerationStructureNV = 5341,
     SpvOpExecuteCallableNV = 5344,
@@ -2207,6 +2214,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTerminateRayNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTraceNV: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTraceMotionNV: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTraceRayMotionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeAccelerationStructureNV: *hasResult = true; *hasResultType = false; break;
     case SpvOpExecuteCallableNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
