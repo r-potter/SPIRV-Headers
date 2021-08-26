@@ -26,8 +26,8 @@
   ],
   "magic_number" : "0x07230203",
   "major_version" : 1,
-  "minor_version" : 5,
-  "revision" : 4,
+  "minor_version" : 6,
+  "revision" : 1,
   "instruction_printing_class" : [
     {
       "tag"     : "@exclude"
@@ -13562,20 +13562,13 @@
           "version" : "None"
         },
         {
-          "enumerant" : "DotProductInputAllKHR",
-          "value" : 6016,
-          "extensions" : [ "SPV_KHR_integer_dot_product" ],
-          "version" : "1.6"
-        },
-        {
           "enumerant" : "DotProductInputAll",
           "value" : 6016,
           "version" : "1.6"
         },
         {
-          "enumerant" : "DotProductInput4x8BitKHR",
-          "value" : 6017,
-          "capabilities" : [ "Int8" ],
+          "enumerant" : "DotProductInputAllKHR",
+          "value" : 6016,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "1.6"
         },
@@ -13586,8 +13579,9 @@
           "version" : "1.6"
         },
         {
-          "enumerant" : "DotProductInput4x8BitPackedKHR",
-          "value" : 6018,
+          "enumerant" : "DotProductInput4x8BitKHR",
+          "value" : 6017,
+          "capabilities" : [ "Int8" ],
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "1.6"
         },
@@ -13597,14 +13591,20 @@
           "version" : "1.6"
         },
         {
-          "enumerant" : "DotProductKHR",
-          "value" : 6019,
+          "enumerant" : "DotProductInput4x8BitPackedKHR",
+          "value" : 6018,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "1.6"
         },
         {
           "enumerant" : "DotProduct",
           "value" : 6019,
+          "version" : "1.6"
+        },
+        {
+          "enumerant" : "DotProductKHR",
+          "value" : 6019,
+          "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "1.6"
         },
         {
@@ -13719,14 +13719,14 @@
       "kind" : "PackedVectorFormat",
       "enumerants" : [
         {
-          "enumerant" : "PackedVectorFormat4x8BitKHR",
+          "enumerant" : "PackedVectorFormat4x8Bit",
           "value" : 0,
-          "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "1.6"
         },
         {
-          "enumerant" : "PackedVectorFormat4x8Bit",
+          "enumerant" : "PackedVectorFormat4x8BitKHR",
           "value" : 0,
+          "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "1.6"
         }
       ]

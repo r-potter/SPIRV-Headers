@@ -48,8 +48,8 @@ namespace Spv
     public static class Specification
     {
         public const uint MagicNumber = 0x07230203;
-        public const uint Version = 0x00010500;
-        public const uint Revision = 4;
+        public const uint Version = 0x00010600;
+        public const uint Revision = 1;
         public const uint OpCodeMask = 0xffff;
         public const uint WordCountShift = 16;
 

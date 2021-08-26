@@ -51,8 +51,8 @@
 module spv;
 
 enum uint MagicNumber = 0x07230203;
-enum uint Version = 0x00010500;
-enum uint Revision = 4;
+enum uint Version = 0x00010600;
+enum uint Revision = 1;
 enum uint OpCodeMask = 0xffff;
 enum uint WordCountShift = 16;
 
