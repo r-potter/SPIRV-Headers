@@ -916,6 +916,7 @@ enum Capability {
     CapabilityGroupNonUniformQuad = 68,
     CapabilityShaderLayer = 69,
     CapabilityShaderViewportIndex = 70,
+    CapabilityUniformDecoration = 71,
     CapabilityFragmentShadingRateKHR = 4422,
     CapabilitySubgroupBallotKHR = 4423,
     CapabilityDrawParameters = 4427,

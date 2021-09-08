@@ -10898,12 +10898,12 @@
         {
           "enumerant" : "Uniform",
           "value" : 26,
-          "capabilities" : [ "Shader" ]
+          "capabilities" : [ "Shader", "UniformDecoration" ]
         },
         {
           "enumerant" : "UniformId",
           "value" : 27,
-          "capabilities" : [ "Shader" ],
+          "capabilities" : [ "Shader", "UniformDecoration" ],
           "parameters" : [
             { "kind" : "IdScope",           "name" : "'Execution'" }
           ],
@@ -12705,6 +12705,11 @@
           "enumerant" : "ShaderViewportIndex",
           "value" : 70,
           "version" : "1.5"
+        },
+        {
+          "enumerant" : "UniformDecoration",
+          "value" : 71,
+          "version" : "1.6"
         },
         {
           "enumerant" : "FragmentShadingRateKHR",
