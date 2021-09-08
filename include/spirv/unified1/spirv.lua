@@ -878,6 +878,7 @@ spv = {
         GroupNonUniformQuad = 68,
         ShaderLayer = 69,
         ShaderViewportIndex = 70,
+        UniformDecoration = 71,
         FragmentShadingRateKHR = 4422,
         SubgroupBallotKHR = 4423,
         DrawParameters = 4427,

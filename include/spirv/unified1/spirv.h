@@ -920,6 +920,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityGroupNonUniformQuad = 68,
     SpvCapabilityShaderLayer = 69,
     SpvCapabilityShaderViewportIndex = 70,
+    SpvCapabilityUniformDecoration = 71,
     SpvCapabilityFragmentShadingRateKHR = 4422,
     SpvCapabilitySubgroupBallotKHR = 4423,
     SpvCapabilityDrawParameters = 4427,
