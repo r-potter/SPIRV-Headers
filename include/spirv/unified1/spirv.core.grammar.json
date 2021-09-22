@@ -8577,7 +8577,7 @@
           "version" : "1.4"
         },
         {
-          "enumerant" : "NonTemporal",
+          "enumerant" : "Nontemporal",
           "value" : "0x4000",
           "version" : "1.6"
         }

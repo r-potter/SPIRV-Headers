@@ -352,7 +352,7 @@ enum ImageOperandsShift : uint
     VolatileTexelKHR = 11,
     SignExtend = 12,
     ZeroExtend = 13,
-    NonTemporal = 14,
+    Nontemporal = 14,
 }
 
 enum ImageOperandsMask : uint
@@ -376,7 +376,7 @@ enum ImageOperandsMask : uint
     VolatileTexelKHR = 0x00000800,
     SignExtend = 0x00001000,
     ZeroExtend = 0x00002000,
-    NonTemporal = 0x00004000,
+    Nontemporal = 0x00004000,
 }
 
 enum FPFastMathModeShift : uint

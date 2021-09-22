@@ -396,7 +396,7 @@
                     "VolatileTexelKHR": 11,
                     "SignExtend": 12,
                     "ZeroExtend": 13,
-                    "NonTemporal": 14
+                    "Nontemporal": 14
                 }
             },
             {
