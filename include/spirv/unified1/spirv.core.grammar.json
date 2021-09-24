@@ -11033,8 +11033,15 @@
         {
           "enumerant" : "PerVertexNV",
           "value" : 5285,
-          "capabilities" : [ "FragmentBarycentricNV" ],
-          "extensions" : [ "SPV_NV_fragment_shader_barycentric" ],
+          "capabilities" : [ "FragmentBarycentricNV", "FragmentBarycentricKHR" ],
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PerVertexKHR",
+          "value" : 5285,
+          "capabilities" : [ "FragmentBarycentricNV", "FragmentBarycentricKHR" ],
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
           "version" : "None"
         },
         {
@@ -11868,15 +11875,29 @@
         {
           "enumerant" : "BaryCoordNV",
           "value" : 5286,
-          "capabilities" : [ "FragmentBarycentricNV" ],
-          "extensions" : [ "SPV_NV_fragment_shader_barycentric" ],
+          "capabilities" : [ "FragmentBarycentricNV", "FragmentBarycentricKHR" ],
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BaryCoordKHR",
+          "value" : 5286,
+          "capabilities" : [ "FragmentBarycentricNV", "FragmentBarycentricKHR" ],
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
           "version" : "None"
         },
         {
           "enumerant" : "BaryCoordNoPerspNV",
           "value" : 5287,
-          "capabilities" : [ "FragmentBarycentricNV" ],
-          "extensions" : [ "SPV_NV_fragment_shader_barycentric" ],
+          "capabilities" : [ "FragmentBarycentricNV", "FragmentBarycentricKHR" ],
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BaryCoordNoPerspKHR",
+          "value" : 5287,
+          "capabilities" : [ "FragmentBarycentricNV", "FragmentBarycentricKHR" ],
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
           "version" : "None"
         },
         {
@@ -12929,7 +12950,13 @@
         {
           "enumerant" : "FragmentBarycentricNV",
           "value" : 5284,
-          "extensions" : [ "SPV_NV_fragment_shader_barycentric" ],
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FragmentBarycentricKHR",
+          "value" : 5284,
+          "extensions" : [ "SPV_NV_fragment_shader_barycentric", "SPV_KHR_fragment_shader_barycentric" ],
           "version" : "None"
         },
         {
