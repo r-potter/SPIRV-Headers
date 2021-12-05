@@ -333,6 +333,7 @@ spv = {
         SignExtend = 12,
         ZeroExtend = 13,
         Nontemporal = 14,
+        Offsets = 16,
     },
 
     ImageOperandsMask = {
@@ -356,6 +357,7 @@ spv = {
         SignExtend = 0x00001000,
         ZeroExtend = 0x00002000,
         Nontemporal = 0x00004000,
+        Offsets = 0x00010000,
     },
 
     FPFastMathModeShift = {
@@ -475,6 +477,10 @@ spv = {
         RestrictPointerEXT = 5355,
         AliasedPointer = 5356,
         AliasedPointerEXT = 5356,
+        BindlessSamplerNV = 5398,
+        BindlessImageNV = 5399,
+        BoundSamplerNV = 5400,
+        BoundImageNV = 5401,
         SIMTCallINTEL = 5599,
         ReferencedIndirectlyINTEL = 5602,
         ClobberINTEL = 5607,
@@ -514,6 +520,7 @@ spv = {
         FunctionFloatingPointModeINTEL = 6080,
         SingleElementVectorINTEL = 6085,
         VectorComputeCallableFunctionINTEL = 6087,
+        MediaBlockIOINTEL = 6140,
     },
 
     BuiltIn = {
@@ -977,6 +984,7 @@ spv = {
         FragmentShaderPixelInterlockEXT = 5378,
         DemoteToHelperInvocation = 5379,
         DemoteToHelperInvocationEXT = 5379,
+        BindlessTextureNV = 5390,
         SubgroupShuffleINTEL = 5568,
         SubgroupBufferBlockIOINTEL = 5569,
         SubgroupImageBlockIOINTEL = 5570,
@@ -1533,6 +1541,13 @@ spv = {
         OpDemoteToHelperInvocation = 5380,
         OpDemoteToHelperInvocationEXT = 5380,
         OpIsHelperInvocationEXT = 5381,
+        OpConvertUToImageNV = 5391,
+        OpConvertUToSamplerNV = 5392,
+        OpConvertImageToUNV = 5393,
+        OpConvertSamplerToUNV = 5394,
+        OpConvertUToSampledImageNV = 5395,
+        OpConvertSampledImageToUNV = 5396,
+        OpSamplerImageAddressingModeNV = 5397,
         OpSubgroupShuffleINTEL = 5571,
         OpSubgroupShuffleDownINTEL = 5572,
         OpSubgroupShuffleUpINTEL = 5573,
@@ -1557,7 +1572,7 @@ spv = {
         OpUSubSatINTEL = 5596,
         OpIMul32x16INTEL = 5597,
         OpUMul32x16INTEL = 5598,
-        OpConstFunctionPointerINTEL = 5600,
+        OpConstantFunctionPointerINTEL = 5600,
         OpFunctionPointerCallINTEL = 5601,
         OpAsmTargetINTEL = 5609,
         OpAsmINTEL = 5610,
