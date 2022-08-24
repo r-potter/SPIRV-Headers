@@ -29,11 +29,7 @@
 # https://www.khronos.org/registry/spir-v/
 #
 cmake_minimum_required(VERSION 3.0)
-<<<<<<< HEAD
 project(SPIRV-Headers VERSION 1.6.1)
-=======
-project(SPIRV-Headers VERSION 1.5.5)
->>>>>>> GitHub/master
 
 # There are two ways to use this project.
 #
