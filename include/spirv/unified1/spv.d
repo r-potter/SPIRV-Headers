@@ -1081,6 +1081,7 @@ enum Capability : uint
     TileImageColorReadAccessEXT = 4166,
     TileImageDepthReadAccessEXT = 4167,
     TileImageStencilReadAccessEXT = 4168,
+    CooperativeMatrixLayoutsARM = 4201,
     FragmentShadingRateKHR = 4422,
     SubgroupBallotKHR = 4423,
     DrawParameters = 4427,
@@ -1409,6 +1410,8 @@ enum CooperativeMatrixLayout : uint
 {
     RowMajorKHR = 0,
     ColumnMajorKHR = 1,
+    RowBlockedInterleavedARM = 4202,
+    ColumnBlockedInterleavedARM = 4203,
     Max = 0x7fffffff,
 }
 
