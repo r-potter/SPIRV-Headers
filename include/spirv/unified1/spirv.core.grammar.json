@@ -10113,7 +10113,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef",          "name" : "'Target '" }
+        { "kind" : "IdRef",          "name" : "'Target'" }
       ],
       "capabilities" : [ "ArithmeticFenceEXT" ],
       "version" : "None"
