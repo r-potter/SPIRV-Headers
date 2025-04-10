@@ -5502,6 +5502,30 @@
       "version" : "None"
     },
     {
+      "opname" : "OpConstantDataKHR",
+      "class"  : "Reserved",
+      "opcode" : 5147,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralString", "name" : "'Data'" }
+      ],
+      "capabilities" : [ "ConstantDataKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSpecConstantDataKHR",
+      "class"  : "Reserved",
+      "opcode" : 5148,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralString", "name" : "'Data'" }
+      ],
+      "capabilities" : [ "ConstantDataKHR" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpHitObjectRecordHitMotionNV",
       "class"  : "Reserved",
       "opcode" : 5249,
@@ -13431,6 +13455,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "UTFCodePointsKHR",
+          "value" : 5145,
+          "capabilities" : [ "ConstantDataKHR" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "OverrideCoverageNV",
           "value" : 5248,
           "capabilities" : [ "SampleMaskOverrideCoverageNV" ],
@@ -15898,6 +15928,12 @@
           "extensions" : [ "SPV_KHR_quad_control" ],
           "version" : "None"
         },		
+        {
+          "enumerant" : "ConstantDataKHR",
+          "value" : 5146,
+          "extensions" : [ "SPV_KHR_constant_data" ],
+          "version" : "None"
+        },
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
