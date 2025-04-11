@@ -5503,7 +5503,7 @@
     },
     {
       "opname" : "OpConstantDataKHR",
-      "class"  : "Reserved",
+      "class"  : "Constant-Creation",
       "opcode" : 5147,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -5515,7 +5515,7 @@
     },
     {
       "opname" : "OpSpecConstantDataKHR",
-      "class"  : "Reserved",
+      "class"  : "Constant-Creation",
       "opcode" : 5148,
       "operands" : [
         { "kind" : "IdResultType" },
