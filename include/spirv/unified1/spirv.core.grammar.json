@@ -1,28 +1,12 @@
 {
   "copyright" : [
-    "Copyright (c) 2014-2024 The Khronos Group Inc.",
+    "Copyright: 2014-2024 The Khronos Group Inc.",
+    "License: MIT",
     "",
-    "Permission is hereby granted, free of charge, to any person obtaining a copy",
-    "of this software and/or associated documentation files (the \"Materials\"),",
-    "to deal in the Materials without restriction, including without limitation",
-    "the rights to use, copy, modify, merge, publish, distribute, sublicense,",
-    "and/or sell copies of the Materials, and to permit persons to whom the",
-    "Materials are furnished to do so, subject to the following conditions:",
-    "",
-    "The above copyright notice and this permission notice shall be included in",
-    "all copies or substantial portions of the Materials.",
-    "",
-    "MODIFICATIONS TO THIS FILE MAY MEAN IT NO LONGER ACCURATELY REFLECTS KHRONOS",
-    "STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS SPECIFICATIONS AND",
-    "HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/ ",
-    "",
-    "THE MATERIALS ARE PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS",
-    "OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
-    "FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL",
-    "THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
-    "LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING",
-    "FROM,OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS",
-    "IN THE MATERIALS."
+    "MODIFICATIONS TO THIS FILE MAY MEAN IT NO LONGER ACCURATELY REFLECTS",
+    "KHRONOS STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS",
+    "SPECIFICATIONS AND HEADER INFORMATION ARE LOCATED AT",
+    "https://www.khronos.org/registry/"
   ],
   "magic_number" : "0x07230203",
   "major_version" : 1,
@@ -127,6 +111,14 @@
     {
       "tag"     : "Non-Uniform",
       "heading" : "Non-Uniform Instructions"
+    },
+    {
+      "tag"     : "Tensor",
+      "heading" : "Tensor Instructions"
+    },
+    {
+      "tag"     : "Graph",
+      "heading" : "Graph Instructions"
     },
     {
       "tag"     : "Reserved",
@@ -4431,6 +4423,138 @@
         { "kind" : "IdRef", "name" : "Sample", "quantifier" : "?" }
       ],
       "capabilities" : [ "TileImageStencilReadAccessEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeTensorARM",
+      "class"  : "Type-Declaration",
+      "opcode" : 4163,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "Element Type" },
+        { "kind" : "IdRef",        "name" : "Rank",  "quantifier" : "?" },
+        { "kind" : "IdRef",        "name" : "Shape", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "TensorsARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorReadARM",
+      "class"  : "Tensor",
+      "opcode" : 4164,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "Tensor" },
+        { "kind" : "IdRef",        "name" : "Coordinates" },
+        { "kind" : "TensorOperands", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "TensorsARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorWriteARM",
+      "class"  : "Tensor",
+      "opcode" : 4165,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "Tensor" },
+        { "kind" : "IdRef",        "name" : "Coordinates" },
+        { "kind" : "IdRef",        "name" : "Object" },
+        { "kind" : "TensorOperands", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "TensorsARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorQuerySizeARM",
+      "class"  : "Tensor",
+      "opcode" : 4166,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "Tensor" },
+        { "kind" : "IdRef",        "name" : "Dimension" }
+      ],
+      "capabilities" : [ "TensorsARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphConstantARM",
+      "class"  : "Graph",
+      "opcode" : 4181,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger", "name" : "GraphConstantID" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphEntryPointARM",
+      "class"  : "Graph",
+      "opcode" : 4182,
+      "operands" : [
+        { "kind" : "IdRef",                              "name" : "Graph" },
+        { "kind" : "LiteralString",                      "name" : "Name" },
+        { "kind" : "IdRef",          "quantifier" : "*", "name" : "Interface" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphARM",
+      "class"  : "Graph",
+      "opcode" : 4183,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphInputARM",
+      "class"  : "Graph",
+      "opcode" : 4184,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",          "name" : "InputIndex" },
+        { "kind" : "IdRef",          "quantifier" : "*", "name" : "ElementIndex" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphSetOutputARM",
+      "class"  : "Graph",
+      "opcode" : 4185,
+      "operands" : [
+        { "kind" : "IdRef", "name": "Value" },
+        { "kind" : "IdRef", "name" : "OutputIndex" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "ElementIndex" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphEndARM",
+      "class"  : "Graph",
+      "opcode" : 4186,
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeGraphARM",
+      "class"  : "Type-Declaration",
+      "opcode" : 4190,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger",               "name" : "NumInputs" },
+        { "kind" : "IdRef",    "quantifier" : "*", "name" : "InOutTypes" }
+      ],
+      "capabilities" : [ "GraphARM" ],
       "version" : "None"
     },
     {
@@ -10654,6 +10778,101 @@
       "version" : "None"
     },
     {
+      "opname" : "OpConditionalExtensionINTEL",
+      "class"  : "Extension",
+      "opcode" : 6248,
+      "operands" : [
+        { "kind" : "IdRef",         "name" : "Condition" },
+        { "kind" : "LiteralString", "name" : "Name" }
+      ],
+      "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConditionalEntryPointINTEL",
+      "class"  : "Mode-Setting",
+      "opcode" : 6249,
+      "operands" : [
+        { "kind" : "IdRef",                              "name" : "Condition" },
+        { "kind" : "ExecutionModel" },
+        { "kind" : "IdRef",                              "name" : "Entry Point" },
+        { "kind" : "LiteralString",                      "name" : "Name" },
+        { "kind" : "IdRef",          "quantifier" : "*", "name" : "Interface" }
+      ],
+      "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConditionalCapabilityINTEL",
+      "class"  : "Mode-Setting",
+      "opcode" : 6250,
+      "operands" : [
+        { "kind" : "IdRef",      "name" : "Condition" },
+        { "kind" : "Capability", "name" : "Capability" }
+      ],
+      "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSpecConstantTargetINTEL",
+      "class"  : "Constant-Creation",
+      "opcode" : 6251,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger",                     "name" : "Target" },
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Features" }
+      ],
+      "capabilities" : [ "FunctionVariantsINTEL" ],
+      "provisional" : true,
+      "version": "None"
+    },
+    {
+      "opname" : "OpSpecConstantArchitectureINTEL",
+      "class"  : "Constant-Creation",
+      "opcode" : 6252,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger", "name" : "Category" },
+        { "kind" : "LiteralInteger", "name" : "Family" },
+        { "kind" : "LiteralInteger", "name" : "Opcode" },
+        { "kind" : "LiteralInteger", "name" : "Architecture" }
+      ],
+      "capabilities" : [ "FunctionVariantsINTEL" ],
+      "provisional" : true,
+      "version": "None"
+    },
+    {
+      "opname" : "OpSpecConstantCapabilitiesINTEL",
+      "class"  : "Constant-Creation",
+      "opcode" : 6253,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "Capability", "quantifier" : "*", "name" : "Capabilities" }
+      ],
+      "capabilities" : [ "FunctionVariantsINTEL" ],
+      "provisional" : true,
+      "version": "None"
+    },
+    {
+      "opname" : "OpConditionalCopyObjectINTEL",
+      "class"  : "Composite",
+      "opcode" : 6254,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "Condition 0, Operand 0, +\nCondition 1, Operand 1, +\n..." }
+      ],
+      "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIMulKHR",
       "class"  : "Group",
       "opcode" : 6401,
@@ -10803,6 +11022,45 @@
         { "kind" : "IdRef",           "name" : "Mask" }
       ],
       "capabilities" : [ "MaskedGatherScatterINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConvertHandleToImageINTEL",
+      "class"  : "Image",
+      "opcode" : 6529,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",           "name" : "Operand" }
+      ],
+      "capabilities" : [ "BindlessImagesINTEL" ],
+      "provisional"  : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConvertHandleToSamplerINTEL",
+      "class"  : "Image",
+      "opcode" : 6530,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",           "name" : "Operand" }
+      ],
+      "capabilities" : [ "BindlessImagesINTEL" ],
+      "provisional"  : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConvertHandleToSampledImageINTEL",
+      "class"  : "Image",
+      "opcode" : 6531,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",           "name" : "Operand" }
+      ],
+      "capabilities" : [ "BindlessImagesINTEL" ],
+      "provisional"  : true,
       "version" : "None"
     }
   ],
@@ -13984,6 +14242,12 @@
           "version" : "1.2"
         },
         {
+          "enumerant" : "SaturatedToLargestFloat8NormalConversionEXT",
+          "value" : 4216,
+          "capabilities" : [ "Float8EXT" ],
+          "version": "None"
+        },
+        {
           "enumerant" : "NoSignedWrap",
           "value" : 4469,
           "extensions" : [ "SPV_KHR_no_integer_wrap_decoration" ],
@@ -14138,8 +14402,8 @@
         {
           "enumerant" : "PerTaskNV",
           "value" : 5273,
-          "capabilities" : [ "MeshShadingNV", "MeshShadingEXT" ],
-          "extensions" : [ "SPV_NV_mesh_shader", "SPV_EXT_mesh_shader" ],
+          "capabilities" : [ "MeshShadingNV" ],
+          "extensions" : [ "SPV_NV_mesh_shader" ],
           "version" : "None"
         },
         {
@@ -14729,6 +14993,16 @@
             { "kind" : "LiteralInteger", "name" : "Value" }
           ],
           "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ConditionalINTEL",
+          "value" : 6247,
+          "parameters": [
+            { "kind" : "IdRef", "name" : "Condition" }
+          ],
+          "capabilities" : [ "SpecConditionalINTEL" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -16149,9 +16423,46 @@
           "version" : "None"
         },
         {
+          "enumerant" : "TensorsARM",
+          "value" : 4174,
+          "extensions" : [ "SPV_ARM_tensors"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "StorageTensorArrayDynamicIndexingARM",
+          "value" : 4175,
+          "extensions" : [ "SPV_ARM_tensors"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "StorageTensorArrayNonUniformIndexingARM",
+          "value" : 4176,
+          "extensions" : [ "SPV_ARM_tensors"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GraphARM",
+          "value" : 4191,
+          "extensions" : [ "SPV_ARM_graph"],
+          "version" : "None"
+        },
+        {
           "enumerant" : "CooperativeMatrixLayoutsARM",
           "value" : 4201,
           "extensions" : [ "SPV_ARM_cooperative_matrix_layouts" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float8EXT",
+          "value" : 4212,
+          "extensions" : [ "SPV_EXT_float8"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float8CooperativeMatrixEXT",
+          "value" : 4213,
+          "capabilities" : [ "Float8EXT", "CooperativeMatrixKHR" ],
+          "extensions" : [ "SPV_EXT_float8"],
           "version" : "None"
         },
         {
@@ -16443,6 +16754,19 @@
           "enumerant" : "QuadControlKHR",
           "value" : 5087,
           "extensions" : [ "SPV_KHR_quad_control" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Int4TypeINTEL",
+          "value" : 5112,
+          "extensions" : [ "SPV_INTEL_int4" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Int4CooperativeMatrixINTEL",
+          "value" : 5114,
+          "capabilities" : [ "Int4TypeINTEL", "CooperativeMatrixKHR" ],
+          "extensions" : [ "SPV_INTEL_int4" ],
           "version" : "None"
         },
         {
@@ -17345,6 +17669,21 @@
           "version" : "None"
         },
         {
+          "enumerant" : "SpecConditionalINTEL",
+          "value" : 6245,
+          "extensions" : [ "SPV_INTEL_function_variants" ],
+          "provisional" : true,
+          "version": "None"
+        },
+        {
+          "enumerant" : "FunctionVariantsINTEL",
+          "value" : 6246,
+          "capabilities" : [ "SpecConditionalINTEL" ],
+          "extensions" : [ "SPV_INTEL_function_variants" ],
+          "provisional" : true,
+          "version": "None"
+        },
+        {
           "enumerant" : "GroupUniformArithmeticKHR",
           "value" : 6400,
           "extensions" : [ "SPV_KHR_uniform_group_instructions"],
@@ -17372,6 +17711,13 @@
           "enumerant" : "RegisterLimitsINTEL",
           "value" : 6460,
           "extensions" : [ "SPV_INTEL_maximum_registers" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BindlessImagesINTEL",
+          "value" : 6528,
+          "extensions" : [ "SPV_INTEL_bindless_images" ],
+          "provisional" : true,
           "version" : "None"
         }
       ]
@@ -17799,6 +18145,18 @@
           "value" : 0,
           "capabilities" : [ "BFloat16TypeKHR" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "Float8E4M3EXT",
+          "value" : 4214,
+          "capabilities" : [ "Float8EXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float8E5M2EXT",
+          "value" : 4215,
+          "capabilities" : [ "Float8EXT" ],
+          "version" : "None"
         }
       ]
     },
@@ -17978,6 +18336,57 @@
       "category" : "Composite",
       "kind" : "PairIdRefIdRef",
       "bases" : [ "IdRef", "IdRef" ]
+    },
+    {
+      "category" : "BitEnum",
+      "kind" : "TensorOperands",
+      "enumerants" : [
+        {
+          "enumerant" : "NoneARM",
+          "value" : "0x0000",
+          "capabilities" : [ "TensorsARM" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NontemporalARM",
+          "value" : "0x0001",
+          "capabilities" : [ "TensorsARM" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "OutOfBoundsValueARM",
+          "value" : "0x0002",
+          "capabilities" : [ "TensorsARM" ],
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MakeElementAvailableARM",
+          "value" : "0x0004",
+          "capabilities" : [ "TensorsARM" ],
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MakeElementVisibleARM",
+          "value" : "0x0008",
+          "capabilities" : [ "TensorsARM" ],
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NonPrivateElementARM",
+          "value" : "0x0010",
+          "capabilities" : [ "TensorsARM" ],
+          "version" : "None"
+        }
+      ]
     }
   ]
 }
